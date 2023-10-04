@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-//import { NavLink } from "react-bootstrap";
+import headerLogo from '../assets/images/logo.png';
 
 import {
     BrowserRouter as Router,
@@ -26,7 +26,9 @@ export default class Navigationbar extends Component {
                 <div>
                     <Navbar className="bg-body-tertiary main-nav" bg="primary" data-bs-theme="dark" fixed="top" variant="dark">
                         <Container className="nav-sub-container">
-                            <Navbar.Brand as={Link} to="/">NEWS</Navbar.Brand>
+                            <Navbar.Brand as={Link} to="/">
+                                <img src={headerLogo} alt="News App" height={30} />
+                            </Navbar.Brand>
                             <Navbar.Toggle aria-controls="basic-navbar-nav" />
                             <Navbar.Collapse id="basic-navbar-nav">
                                 <Nav className="ms-auto">
@@ -41,7 +43,7 @@ export default class Navigationbar extends Component {
                         </Container>
                     </Navbar>
                 </div>
-                <div>
+                <div className="mt-5">
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/science" element={<Science />} />
